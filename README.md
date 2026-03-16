@@ -1,60 +1,28 @@
-# UserService
+# QueueService
 
-UserService est un microservice développé en **Java Spring Boot** pour gérer les utilisateurs, les rôles, les tokens et les appareils. Il utilise une base de données PostgreSQL et expose des API REST sécurisées.
+Microservice Spring Boot pour envoyer et recevoir des messages via **Amazon MQ ActiveMQ** en utilisant **OpenWire sécurisé (SSL, port 61617)**.
 
----
-
-## Table des matières
-
-- [Fonctionnalités](#fonctionnalités)
-- [Technologies](#technologies)
-- [Prérequis](#prérequis)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Exécution](#exécution)
-- [Endpoints API](#endpoints-api)
-- [Tests](#tests)
-- [Licence](#licence)
+Les messages sont envoyés sous forme **JSON** pour éviter les problèmes de `ObjectMessage` dans la console Amazon MQ.
 
 ---
 
-## Fonctionnalités
+## 📦 Prérequis
 
-- Création, lecture, mise à jour et suppression d’utilisateurs
-- Gestion des rôles et permissions
-- Gestion des tokens (compte, mot de passe, MFA)
-- Gestion des appareils associés aux utilisateurs
-- Sécurité et validation des entrées (email, mot de passe fort, username unique)
-- Support de PostgreSQL avec fonctions PL/pgSQL pour certaines opérations
-
----
-
-## Technologies
-
-- **Java 17**
-- **Spring Boot 3**
-- **Spring Data JDBC / JdbcClient**
-- **PostgreSQL**
-- **Lombok**
-- **Jakarta Validation (Bean Validation)**
-- **JUnit / Mockito pour les tests**
-- **Git / GitHub pour la gestion de version**
+- Java 21
+- Maven 3.9+
+- Amazon MQ ActiveMQ (OpenWire activé, port 61617)
+- macOS / Linux / Windows
+- `.env` pour sécuriser les credentials
 
 ---
 
-## Prérequis
+## 🔒 Sécurisation des données sensibles
 
-- Java 17 ou supérieur
-- Maven 3.8 ou supérieur
-- PostgreSQL 15 ou supérieur
-- Git
+Crée un fichier `.env` à la racine du projet :
 
----
-
-## Installation
-
-1. Cloner le dépôt :
-
-```bash
-git clone https://github.com/fabrice78912/userservice.git
-cd userservice
+```env
+BROKER_URL=ssl://url-broker:61617
+BROKER_USER=***************
+BROKER_PASSWORD=**************
+SERVER_PORT=**************
+ACTIVE_PROFILE=dev

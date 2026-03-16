@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: queueservice
+
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+
+  activemq:
+    broker-url: ${BROKER_URL}
+    user: ${BROKER_USER}
+    password: ${BROKER_PASSWORD}
+  jms:
+    pub-sub-domain: false
+
+server:
+  port: ${SERVER_PORT}

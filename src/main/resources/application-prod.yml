@@ -1,0 +1,23 @@
+ACTIVE_PROFILE: prod
+
+PRIVATE_KEY:
+PUBLIC_KEY:
+
+#------Database informaions---
+POSTGRES_USERNAME: user
+POSTGRES_PASSWORD: TEST
+POSTGRES_HOST: 192.168.1.209
+POSTGRES_PORT: 5432
+POSTGRES_DATABASE: localdb
+
+#-------Eureka server connection
+USER_NAME: ${USERNAME}
+PASSWORD: ${USERNAME}
+
+SERVER_PORT: 8080
+UI_APP_URL: http://localhost:3000
+
+KAFKA_SERVER_URL: http://localhost:9092
+
+EUREKA_HOST: localhost
+EUREKA_PORT: 8761

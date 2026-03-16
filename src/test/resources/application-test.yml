@@ -1,0 +1,70 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: false
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+
+ui:
+  app:
+    url: http://localhost:4200
+
+jwks:
+  uri: http://localhost:8080/oauth2/jwks
+
+server:
+  port: 8999
+
+eureka:
+  client:
+    enabled: false
+
+security:
+  basic:
+    enabled: false
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    service-url:
+#      defaultZone: http://admin:letmein@${EUREKA_HOST}:${EUREKA_PORT}/eureka/
+
+
+
+#spring:
+#  datasource:
+#    url: jdbc:tc:postgresql:16:///testdb
+#    username: user
+#    password: password
+#    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#
+#  flyway:
+#    enabled: false
+#
+#logging:
+#  level:
+#    org.hibernate.SQL: debug

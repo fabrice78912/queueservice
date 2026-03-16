@@ -14,7 +14,7 @@ POSTGRES_DATABASE: localdb
 USER_NAME: admin
 PASSWORD: letmein
 
-SERVER_PORT: 8778
+SERVER_PORT: 8798
 JWKS_URI: http://localhost:8080/oauth2/jwks
 
 UI_APP_URL: http://localhost:3000

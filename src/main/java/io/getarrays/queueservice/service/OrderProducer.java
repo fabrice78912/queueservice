@@ -21,17 +21,10 @@ public class OrderProducer {
     this.jmsTemplate = jmsTemplate;
   }
 
-  /*    public void sendOrder(OrderMessage order) {
-
-      jmsTemplate.convertAndSend("myQueue", order);
-
-      System.out.println("Message sent to queue: " + order.getOrderId());
-  }*/
-
   public void sendOrder(OrderMessage order) {
     ObjectMapper mapper = new ObjectMapper();
     try {
-      String json = mapper.writeValueAsString(order); // CONVERTIR LA DATA AVANT AVOI SUR LE RESEAU
+      String json = mapper.writeValueAsString(order); // CONVERTIR LA DATA AVANT enVOI SUR LE RESEAU
       jmsTemplate.convertAndSend("myQueue", json);
       System.out.println("Message envoyé : " + json);
     } catch (Exception e) {

@@ -1,5 +1,10 @@
 package io.getarrays.queueservice.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import java.io.Serializable;
 
 /**
@@ -10,6 +15,10 @@ import java.io.Serializable;
  * @since 2026-03-16
  */
 
+@ToString
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderMessage implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -17,25 +26,4 @@ public class OrderMessage implements Serializable {
     private String orderId;
     private String product;
     private int quantity;
-
-    public OrderMessage() {}
-
-    public OrderMessage(String orderId, String product, int quantity) {
-        this.orderId = orderId;
-        this.product = product;
-        this.quantity = quantity;
-    }
-
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public String getProduct() {
-        return product;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
 }
